@@ -1,6 +1,8 @@
 {
   "entity.void_echoes.herobrine": "Herobrine",
   "entity.void_echoes.null_entity": "Null",
+  "entity.void_echoes.entity_404": "Entity 404",
   "item.void_echoes.herobrine_spawn_egg": "Herobrine Spawn Egg",
-  "item.void_echoes.null_spawn_egg": "Null Spawn Egg"
+  "item.void_echoes.null_spawn_egg": "Null Spawn Egg",
+  "item.void_echoes.entity_404_spawn_egg": "Entity 404 Spawn Egg"
 }

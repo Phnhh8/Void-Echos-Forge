@@ -1,6 +1,7 @@
 package com.tenban.voidechoes.client;
 
 import com.tenban.voidechoes.VoidEchoesMod;
+import com.tenban.voidechoes.entity.Entity404;
 import com.tenban.voidechoes.entity.HerobrineEntity;
 import com.tenban.voidechoes.entity.NullEntity;
 import com.tenban.voidechoes.init.ModEntities;
@@ -22,6 +23,9 @@ public class ClientModEvents {
     private static final ResourceLocation NULL_TEXTURE =
             ResourceLocation.tryBuild(VoidEchoesMod.MODID, "textures/entity/null.png");
 
+    private static final ResourceLocation ENTITY_404_TEXTURE =
+            ResourceLocation.tryBuild(VoidEchoesMod.MODID, "textures/entity/entity_404.png");
+
     @SubscribeEvent
     public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(ModEntities.HEROBRINE.get(),
@@ -39,6 +43,15 @@ public class ClientModEvents {
                     @Override
                     public ResourceLocation getTextureLocation(NullEntity entity) {
                         return NULL_TEXTURE;
+                    }
+                });
+
+        event.registerEntityRenderer(ModEntities.ENTITY_404.get(),
+                ctx -> new HumanoidMobRenderer<Entity404, HumanoidModel<Entity404>>(
+                        ctx, new HumanoidModel<>(ctx.bakeLayer(ModelLayers.PLAYER)), 0.5f) {
+                    @Override
+                    public ResourceLocation getTextureLocation(Entity404 entity) {
+                        return ENTITY_404_TEXTURE;
                     }
                 });
     }

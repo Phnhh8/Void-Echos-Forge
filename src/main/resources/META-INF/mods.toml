@@ -1,0 +1,9 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="MIT"
+
+[[mods]]
+modId="void_echoes"
+version="1.0.0"
+displayName="Echoes of the Void"
+description='''Horror mod featuring Null and Herobrine.'''

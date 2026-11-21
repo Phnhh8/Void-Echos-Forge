@@ -25,15 +25,15 @@ public class VoidEchoesMod {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
 
-    // Trứng triệu hồi Herobrine
     public static final RegistryObject<Item> HEROBRINE_SPAWN_EGG = ITEMS.register("herobrine_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.HEROBRINE, 0x00AAAA, 0xFFFFFF, new Item.Properties()));
 
-    // Trứng triệu hồi Null
     public static final RegistryObject<Item> NULL_SPAWN_EGG = ITEMS.register("null_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.NULL_ENTITY, 0x000000, 0x1A1A1A, new Item.Properties()));
 
-    // Creative Tab riêng tên là "Echoes of the Void"
+    public static final RegistryObject<Item> ENTITY_404_SPAWN_EGG = ITEMS.register("entity_404_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.ENTITY_404, 0xFFFFFF, 0x00FFAA, new Item.Properties()));
+
     public static final RegistryObject<CreativeModeTab> HORROR_TAB = CREATIVE_MODE_TABS.register("horror_tab",
             () -> CreativeModeTab.builder()
                     .title(Component.literal("Echoes of the Void"))
@@ -41,6 +41,7 @@ public class VoidEchoesMod {
                     .displayItems((parameters, output) -> {
                         output.accept(HEROBRINE_SPAWN_EGG.get());
                         output.accept(NULL_SPAWN_EGG.get());
+                        output.accept(ENTITY_404_SPAWN_EGG.get());
                     })
                     .build());
 
@@ -57,5 +58,6 @@ public class VoidEchoesMod {
     private void registerAttributes(EntityAttributeCreationEvent event) {
         event.put(ModEntities.HEROBRINE.get(), ModEntities.createHorrorAttributes().build());
         event.put(ModEntities.NULL_ENTITY.get(), ModEntities.createHorrorAttributes().build());
+        event.put(ModEntities.ENTITY_404.get(), ModEntities.createHorrorAttributes().build());
     }
 }

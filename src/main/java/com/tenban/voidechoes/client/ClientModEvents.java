@@ -17,10 +17,10 @@ import net.minecraftforge.fml.common.Mod;
 public class ClientModEvents {
 
     private static final ResourceLocation HEROBRINE_TEXTURE =
-            ResourceLocation.fromNamespaceAndPath(VoidEchoesMod.MODID, "textures/entity/herobrine.png");
+            ResourceLocation.tryBuild(VoidEchoesMod.MODID, "textures/entity/herobrine.png");
 
     private static final ResourceLocation NULL_TEXTURE =
-            ResourceLocation.fromNamespaceAndPath(VoidEchoesMod.MODID, "textures/entity/null.png");
+            ResourceLocation.tryBuild(VoidEchoesMod.MODID, "textures/entity/null.png");
 
     @SubscribeEvent
     public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
